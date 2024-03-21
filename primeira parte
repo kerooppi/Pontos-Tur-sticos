@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <title>Pontos Turísticos de Rolante</title>
+        <meta charset="utf-8">
+        <link rel="icon" type="png"
+        href=" ">
+            <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+
+        <header id = "cabeçalho">
+            <nav>
+                <a href="home.html">tela inicial</a>
+                <a href="login.html">logar na conta</a>
+                <a href="esqueci.html">esqueci senha</a>
+                <a href="cadastro.html">cadastrar na conta</a>
+                <a href="detalhes.html">detalhe dos itens</a>
+            </nav>
+
+            <div class="titulo">
+                <img src="c:\Users\Aluno\Downloads\Flores da Olívia.png "
+                alt="img cidade">
+            </div>
+        </header>
+    </head>
+
+    <body>
+        <div id = "container">
+
+        </div>
+
+    <footer>
+        <h2>Rodapé</h2>
+    </footer>
+    </body>
+</html>
