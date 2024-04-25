@@ -6,31 +6,83 @@
         <meta charset="utf-8">
         <link rel="icon" type="png"
         href=" ">
-            <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+            <header id="cabecalho">
+                <div id="titulo">
+                    <img src="c:\Users\Aluno\Downloads\Flores da Olívia.png "
+                    alt="img cidade">
+                    <h1>Pontos Turísticos de Rolante</h1>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li>eventos
+                            <a href="evento1.html">evento1</a>
+                            <a href="evento2.html">evento2</a>
+                            <a href="evento3.html">evento3</a>
 
-        <header id = "cabeçalho">
-            <nav>
-                <a href="home.html">tela inicial</a>
-                <a href="login.html">logar na conta</a>
-                <a href="esqueci.html">esqueci senha</a>
-                <a href="cadastro.html">cadastrar na conta</a>
-                <a href="detalhes.html">detalhe dos itens</a>
-            </nav>
+                    </li>
+                        <li>serviços
+                            <a href="turismo.html">serviço de turismo</a>
+                            <a href="hoteis.html">hotéis</a>
+                            <a href="restaurantes.html">restaurantes</a>
+                        </li>
+                    </ul>
 
-            <div class="titulo">
-                <img src="c:\Users\Aluno\Downloads\Flores da Olívia.png "
-                alt="img cidade">
-            </div>
+                </nav>
+                <nav class="pesquisa">
+                    <input type="text" name="barra">
+                    <input type="button" name="pesquisar">
+                </nav>
+                <nav class="conta">
+                    <ul>
+                        <li>
+                            <a href="login.html">logar na conta</a>
+                        </li>
+                        <li>
+                            <a href="criarconta.html">cadastrar na conta</a>
+                        </li>
+                    </ul>
+                </nav>
         </header>
     </head>
-
     <body>
-        <div id = "container">
-
+        <div class = "cascata">
+            <img src="#" alt="imagem da cascata das andorinhas">
+            <h1>Cascata Das Andorinhas</h1>
+            <input type="checkbox" name="estrela1">
+            <input type="checkbox" name="estrela2">
+            <input type="checkbox" name="estrela3">
+            <input type="checkbox" name="estrela4">
+            <input type="checkbox" name="estrela5">
+            <p>comentários</p>
+            <p>curtidas</p>
         </div>
-
+        <div class = "fazenda">
+            <img src="#" alt="imagem da fazenda wolff">
+            <h1>Fazenda Wolff</h1>
+            <input type="checkbox" name="estrela1">
+            <input type="checkbox" name="estrela2">
+            <input type="checkbox" name="estrela3">
+            <input type="checkbox" name="estrela4">
+            <input type="checkbox" name="estrela5">
+            <p>comentários</p>
+            <p>curtidas</p>
+        </div>
+        <div class="estatua">
+            <img src="#" alt="imagem da estátua do teixeirinha">
+            <h1>Estátua Do Teixeirinha</h1>
+            <input type="checkbox" name="estrela1">
+            <input type="checkbox" name="estrela2">
+            <input type="checkbox" name="estrela3">
+            <input type="checkbox" name="estrela4">
+            <input type="checkbox" name="estrela5">
+            <p>comentários</p>
+            <p>curtidas</p>
+        </div>
     <footer>
-        <h2>Rodapé</h2>
+        <a href="sobre.html">sobre nós</a>
+        <a href="regras.html">diretrizes da comunidade</a>
+        <p>e-mail para contato: exemplo@gmail.com</p>
     </footer>
     </body>
 </html>
