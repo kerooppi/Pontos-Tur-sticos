@@ -1,3 +1,42 @@
+<?php
+    if (isset($_POST["submit"])) {
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
+    }
+
+    if (!empty($email) && !empty($senha)) {
+        // aqui fica lógica de testar se o usuario e a senha estão corretos 
+        $conn = mysqli_connect("127.0.0.1", "root", "aluno", "pontos");
+            
+        if (!$conn){
+            die("Não foi possível conectar ao banco de dados");
+        }
+        $email = "teste@exemplo.com";
+
+        // Valida e sanitiza o e-mail
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+            // consulta sql para testar se o usuário e senha correspondem a uma entrada no bd
+            $sql = "SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'";
+
+            // executa a query
+            $resultado = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($resultado) == 1){
+                session_start();
+                $_SESSION["email"] = $email;
+                // faz o redirecionamento de página
+                header("location: pontos.php");
+            } else {
+                echo ("Usuário ou senha incorretos");
+            }
+        } else {
+            echo ("Preencha o usuario e a senha corretamente");
+        }               
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -37,17 +76,17 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" action="login.php" method="POST">
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="nome@exemplo.com" data-sb-validations="required,email" />
+                        <input class="form-control" id="email" name="email" type="email" placeholder="nome@exemplo.com" data-sb-validations="required,email" />
                         <label for="email">Digite seu email:</label>
                         <div class="invalid-feedback" data-sb-feedback="email:required">Email obrigatório.</div>
                         <div class="invalid-feedback" data-sb-feedback="email:email">O formato do email não é válido.</div>
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="message" type="text" placeholder="Enter your message here..."></input>
+                        <input class="form-control" id="message" name="senha" type="text" placeholder="Enter your message here..."></input>
                         <label for="message">Digite sua senha:</label>
                         <div class="invalid-feedback" data-sb-feedback="message:required">Senha obrigatória.</div>
                     </div>
@@ -69,7 +108,7 @@
                     <!-- an error submitting the form-->
 
                     <!-- Submit Button-->
-                    <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Entrar</button>
+                    <button class="btn btn-primary btn-xl" name="submit" id="submitButton" type="submit">Entrar</button>
                     <a href="criarconta.html"><button class="btn btn-primary btn-xl disabled" id="criarConta" type="button">Criar conta</button></a>
                     <div class="esqueceu">
                         <a href="esqueci.html">Esqueceu sua senha?</a>
